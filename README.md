@@ -239,7 +239,7 @@ A: Ensure HTTPS is enabled. WebRTC requires secure contexts.
 
 ### Need Help?
 
-- 📖 [Documentation](docs/)
+- 📖 [Documentation](./README.md)
 - 🐛 [Report Issues](https://github.com/RajdeepKushwaha5/ZapDrop/issues)
 - 💬 [Discussions](https://github.com/RajdeepKushwaha5/ZapDrop/discussions)
 
@@ -248,4 +248,5 @@ A: Ensure HTTPS is enabled. WebRTC requires secure contexts.
 **Made with ❤️ for a free and open internet**
 
 Deploy your own instance today and enjoy unlimited, private file sharing forever - completely free!
+
 
