@@ -4,7 +4,7 @@
 
 A modern, secure, and completely free peer-to-peer file sharing application built with Next.js and WebRTC. Share files directly between browsers with no servers involved - ensuring complete privacy and security.
 
-![ZapDrop Demo](https://via.placeholder.com/800x400/4F46E5/FFFFFF?text=ZapDrop+P2P+File+Transfer)
+![ZapDrop Demo](./public/demo.png)
 
 ## ✨ Features
 
@@ -248,3 +248,4 @@ A: Ensure HTTPS is enabled. WebRTC requires secure contexts.
 **Made with ❤️ for a free and open internet**
 
 Deploy your own instance today and enjoy unlimited, private file sharing forever - completely free!
+
