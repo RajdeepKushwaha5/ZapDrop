@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* Font Variables */
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-space-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter);
+  font-feature-settings: "cv11", "ss01";
+  font-variation-settings: "opsz" 32;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  min-width: 320px; /* Minimum supported width */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Typography Utilities */
+  .font-feature-default {
+    font-feature-settings: "cv11", "ss01", "zero";
+  }
+  
+  .letter-spacing-tight {
+    letter-spacing: -0.025em;
+  }
+  
+  .letter-spacing-wide {
+    letter-spacing: 0.025em;
+  }
+  
+  /* Improved text rendering */
+  .text-render-optimized {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Responsive design utilities */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .safe-area-insets {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .container-responsive {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  @media (min-width: 480px) {
+    .container-responsive {
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container-responsive {
+      max-width: 768px;
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-responsive {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-responsive {
+      max-width: 1280px;
+    }
+  }
+
+  .mobile-friendly-button {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    .mobile-friendly-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+/* Custom styles for file sharing app */
+.drag-over {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.dark .drag-over {
+  background-color: #1e3a8a;
+}
+
+.progress-bar {
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-indicator {
+  transition: left 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.peer-connection-status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.peer-connection-status.connected {
+  background-color: #10b981;
+}
+
+.peer-connection-status.connecting {
+  background-color: #f59e0b;
+  animation: pulse 1s infinite;
+}
+
+.peer-connection-status.disconnected {
+  background-color: #ef4444;
+}
+
+/* P2P Animation Styles */
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-wave {
+  animation: wave 2s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+/* Particle animation delays */
+.particle-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.particle-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.particle-delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* Enhanced gradients */
+.gradient-mesh {
+  background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.glass-effect {
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Slow spin animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.reverse-spin {
+  animation-direction: reverse;
+}
