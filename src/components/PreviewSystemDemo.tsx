@@ -158,12 +158,13 @@ export function FileListWithPreview({ files, onDownload }: FileListWithPreviewPr
 
       {/* File Preview Modal */}
       <FilePreviewModal
-        file={previewFile}
+        fileName={previewFile?.fileName || ''}
+        fileSize={previewFile?.size || 0}
         previewData={previewData}
         isOpen={isPreviewOpen}
         onClose={handleClosePreview}
         onDownload={handlePreviewDownload}
-        isLoading={previewLoading}
+        loading={previewLoading}
         error={previewError}
       />
     </>
